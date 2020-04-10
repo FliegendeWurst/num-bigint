@@ -45,6 +45,12 @@ use crate::UsizePromotion;
 #[cfg(feature = "quickcheck")]
 use quickcheck::{Arbitrary, Gen};
 
+impl BigInt {
+    pub fn abs(&self) -> &BigUint {
+        &self.data
+    }
+}
+
 /// A Sign is a `BigInt`'s composing element.
 #[derive(PartialEq, PartialOrd, Eq, Ord, Copy, Clone, Debug, Hash)]
 pub enum Sign {
